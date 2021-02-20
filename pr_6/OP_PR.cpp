@@ -22,22 +22,39 @@ int main()
     else {
         for (j = 100; j < 1000; j++)
         {
-            fprintf(f      	      
+            fprintf(f, "%s %d \n", s, j);
+          	      
         }
         fclose(f);                                    
-     err =, name_in_f, "r+");
+    }
+    tt = fopen_s(&r, name_in_f2, "w");
+    err = fopen_s(&f, name_in_f, "r+");
     if (err != 0)
         cout << "The file " << name_in_f << " was not opened\n";
-   e {
+    else {
         while (fscanf_s(f, "%s", s, _countof(s)) != EOF)
         {
-           fscanf_s(f, "%d", &k);
+            fscanf_s(f, "%d", &k);
             a = k / 100;
             b = (k % 100) / 10;
-         
+            c = k % 10;
+            cout << a << setw(5) << b << setw(5) << c << endl;
+            if (b > c & b > a)
+            {
+                fprintf(r, "%d \n", b);
+            }
+            if (c > b & c > a)
+            {
+                fprintf(r, "%d \n", c);
+            }
+            if (a > c & a > b)
+            {
+                fprintf(r, "%d \n", a);
+            }
+        }   
         fclose(f);
         fclose(r);
     }
     system("pause");
-    return ;
+    return 0;
 }
